@@ -42,109 +42,48 @@
 
                 <!-- HEADER -->
 
-                <header class="d-flex align-items-center">
+                <header class="d-flex justify-content-between align-items-center">
 
                     <!-- User -->
                     <div class="d-flex align-items-center gap-2">
-                        <img src="img/avatar_io.jpg" alt="io">
-                        <h4>Nome utente</h4>
+                        <img :src="'img/avatar' + data.user.avatar + '.jpg'" :alt="data.user.name">
+                        <h4>{{ data.user.name }}</h4>
                     </div>
-                    <ul class="d-flex gap-2">
-                        <li><a href="#">link</a></li>
-                        <li><a href="#">link</a></li>
-                        <li><a href="#">link</a></li>
+                    <ul class="d-flex gap-3">
+                        <li><a href="#"><i class="fas fa-circle-notch fa-lg"></i></a></li>
+                        <li><a href="#"><i class="fas fa-message fa-lg"></i></a></li>
+                        <li><a href="#"><i class="fas fa-ellipsis-vertical fa-lg"></i></a></li>
                     </ul>
                 </header>
 
 
                 <div id="banner">
-                    <img src="img/avatar_1.jpg" alt="">
-                    <div>
-                        <p>Ricevi notifiche di nuovi messaggi</p>
-                        <a href="#">Attiva notifiche dekstop</a>
+                    <div id="banner-img">
+                        <i class="fas fa-bell-slash fa-lg"></i>
+                    </div>
+                    <div class="ms-2">
+                        <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
+                        <a href="#" class="text-decoration-underline">Attiva notifiche dekstop</a>
                     </div>
                 </div>
 
 
+                <!-- Searchbar -->
+                <div class="input-group" id="search">
+                    <span class="input-group-text">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                </div>
+
                 <div id="contacts-element">
 
-                    <!-- Searchbar -->
-                    <div class="input-group my-3">
-                        <span class="input-group-text">
-                            <i class="fas fa-search"></i>
-                        </span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
-                    </div>
-
-                    <ul id="contacts-list">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nulla facere repudiandae
-                        voluptatem dignissimos maiores voluptate dolor corporis error sint quaerat iusto iure odio
-                        doloribus, neque dolorem atque, impedit quisquam!
-                        Laboriosam asperiores deleniti, laudantium esse hic, soluta, harum nam quibusdam enim
-                        consectetur dicta? Voluptas, maxime! Nesciunt non doloribus laboriosam labore enim eaque
-                        voluptatem ad quia provident, libero quo blanditiis ut?
-                        Consequatur similique laboriosam earum recusandae alias animi accusantium accusamus modi, totam
-                        ipsum excepturi illum nisi eaque nam sequi esse autem perferendis sunt quia libero provident
-                        nostrum nesciunt! Sed, eveniet ullam!
-                        Nihil, quo provident laudantium debitis illo repellendus labore nobis nam quia enim officiis,
-                        alias quibusdam veritatis nesciunt sunt nemo sequi iusto ratione. Incidunt quibusdam numquam
-                        eligendi fugiat quaerat maxime impedit!
-                        Dicta odio recusandae esse iusto voluptas. Voluptate odio, doloribus inventore velit ipsam
-                        magnam voluptatum fuga! Quos, molestiae cumque quisquam ea aperiam hic, alias molestias, sit
-                        recusandae neque similique illum repellat?
-                        Vel accusantium voluptatem esse? Illo consequuntur aut tempore atque a distinctio nobis,
-                        corrupti et vel, beatae incidunt consectetur at iure voluptatem, optio laudantium maxime
-                        eligendi quos hic veritatis? Odit, rerum.
-                        Velit necessitatibus omnis voluptatem expedita! Voluptates odio eligendi ipsa quae assumenda
-                        velit eaque eius dignissimos beatae necessitatibus. Placeat assumenda soluta eos corrupti
-                        pariatur, libero, accusamus at maxime dolorem ipsum ut.
-                        Beatae, iure, illo maxime labore ipsa odio corporis sit rem natus itaque a, ullam nulla.
-                        Laboriosam accusantium sit alias, totam corrupti itaque ducimus numquam excepturi, rerum
-                        explicabo inventore, nemo maxime.
-                        Ut beatae tenetur perspiciatis corrupti recusandae, obcaecati in officia! Ipsum error sequi,
-                        enim ab amet eius illo ipsam impedit, suscipit eaque velit. Incidunt quod dolore error
-                        aspernatur, quo perferendis neque.
-                        Tenetur odit maxime a provident sed in ipsam ducimus rerum minima voluptatum, tempora
-                        perspiciatis illum, voluptatem cum saepe recusandae autem obcaecati hic illo reiciendis, iste
-                        reprehenderit quam amet? Alias, ipsum.
-                        Animi earum accusantium commodi repudiandae nostrum unde veritatis! Culpa, numquam ipsum,
-                        reprehenderit corrupti beatae voluptatem minus natus eum consectetur nostrum perspiciatis dolore
-                        dignissimos quam porro laboriosam error. Assumenda, nulla voluptatem!
-                        Recusandae praesentium provident numquam obcaecati itaque ex earum beatae veniam, quos ducimus!
-                        Error atque cumque, sit expedita asperiores eum fugit laborum ad eaque fugiat, ducimus nobis
-                        inventore quibusdam delectus cupiditate?
-                        Quae cupiditate doloribus magnam corporis, laborum rem odit reiciendis molestias consectetur
-                        voluptatem quisquam distinctio, eveniet rerum. Veritatis eum modi fuga voluptas labore quaerat,
-                        vel illum accusantium tempore in! Mollitia, animi.
-                        Velit saepe ipsa nesciunt quasi? Error inventore laboriosam architecto dicta praesentium! Eaque
-                        corporis pariatur rem minus fuga ab tenetur praesentium, ut commodi optio dolorum, culpa,
-                        suscipit quaerat doloremque tempora! Recusandae!
-                        Doloremque, accusantium tempore quo modi numquam eius, perferendis nesciunt quas eum officia
-                        excepturi pariatur molestiae odit possimus deleniti dicta maxime quibusdam fugiat! Quidem
-                        sapiente, aliquid ipsam voluptatibus quaerat nulla reiciendis!
-                        Magnam at dicta magni molestiae consectetur voluptas animi quasi excepturi quisquam asperiores
-                        error, tenetur dolor deserunt, illo maiores, suscipit perspiciatis ad sed ex sit dolorum
-                        obcaecati iusto! Eum, sapiente corrupti.
-                        Cumque earum sit voluptates blanditiis minima, accusamus quos optio debitis laborum consequatur,
-                        architecto voluptatibus facere ullam iste, asperiores velit eum dicta ratione nemo esse ipsam
-                        sapiente. Tenetur earum explicabo atque.
-                        Sapiente, sequi? Doloremque adipisci, corporis cupiditate ducimus quaerat omnis eius assumenda
-                        reiciendis perspiciatis quam nisi aliquid mollitia consequuntur obcaecati saepe nulla sapiente
-                        rem! Earum voluptatem soluta tempore aliquid, quod eos.
-                        Tempora architecto repellat, illo asperiores fugiat, corporis, laboriosam deserunt nihil minima
-                        magnam esse aspernatur dolorum suscipit quisquam quod animi dolore in libero veniam possimus!
-                        Facilis reprehenderit ab rem dolorem culpa?
-                        Enim dolore excepturi esse ipsam est corporis itaque, officiis alias molestiae atque velit,
-                        nihil labore necessitatibus rerum ut neque dignissimos odit saepe praesentium quibusdam earum!
-                        Quasi numquam quibusdam harum corporis?
-                        Corporis commodi tenetur minus eaque quos! In laborum fuga nobis voluptate delectus dolore
-                        error? Inventore distinctio ab, doloremque praesentium velit iste temporibus reiciendis
-                        molestias omnis quidem adipisci vitae? Atque, veritatis!
-                        Autem odio consequuntur ea perspiciatis consectetur incidunt id. Error libero ullam animi odit
-                        laboriosam ratione natus itaque corporis culpa amet. Aut provident eaque in facere placeat id
-                        voluptas vero nulla!
-                        Nostrum dignissimos ipsam nulla impedit cupiditate dicta rerum pariatur veniam voluptatum
-
+                    <ul id="contacts-list" class="list-group list-group-flush">
+                        <li v-for="contact in data.contacts" :key="contact.id"
+                            class="list-group-item d-flex gap-2 align-items-center" role="button">
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                            {{ contact.name }}
+                        </li>
                     </ul>
 
                 </div>
@@ -157,105 +96,41 @@
                 <!-- HEADER -->
                 <header class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center gap-2">
-                        <img src="img/avatar_io.jpg" alt="io">
-                        <h4>Nome utente</h4>
+                        <img :src="'img/avatar' + data.contacts[0].avatar + '.jpg'" :alt="data.contacts[0].name">
+                        <div>
+                            <h4>{{ data.contacts[0].name }}</h4>
+                            <p class="m-0 fs-6 fw-light">Ultimo accesso oggi alle</p>
+                        </div>
                     </div>
-                    <ul class="d-flex gap-2">
-                        <li><a href="#">link</a></li>
-                        <li><a href="#">link</a></li>
-                        <li><a href="#">link</a></li>
+                    <ul class="d-flex gap-3">
+                        <li><a href="#"><i class="fas fa-search fa-lg"></i></a></li>
+                        <li><a href="#"><i class="fas fa-paperclip fa-lg"></i></a></li>
+                        <li><a href="#"><i class="fas fa-ellipsis-vertical fa-lg"></i></a></li>
                     </ul>
                 </header>
 
                 <div id="chat-main">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aspernatur natus veritatis.
-                    Adipisci eos quidem eius quas ullam, quaerat quae dolore placeat dolorem. Provident esse autem iure
-                    voluptatibus modi minima?
-                    Maiores harum vel nihil suscipit tempore. Iure in perferendis ipsa sequi modi odit a? Quasi,
-                    necessitatibus assumenda enim autem, voluptatibus distinctio quod temporibus voluptate ducimus illo
-                    eligendi velit recusandae dolor.
-                    Quae, cum omnis! Amet nisi ratione, quisquam delectus sit rem illo eius itaque nostrum ea tenetur
-                    laborum optio reprehenderit, dolore doloremque repellat. Porro cumque at facere omnis eligendi culpa
-                    explicabo.
-                    Quis accusantium fugiat dolorem porro repellat soluta cupiditate minima mollitia eveniet quas ad
-                    nobis totam, deleniti quos aliquam ea ex, delectus iusto sequi non eaque saepe dolor! Odio, quos
-                    dicta!
-                    Atque dolorem voluptatibus laudantium culpa illum consequuntur placeat. Excepturi velit tenetur
-                    temporibus repellat voluptates nesciunt rem, voluptate, in pariatur adipisci, eveniet autem!
-                    Nesciunt alias itaque vitae, doloribus eligendi nisi cupiditate.
-                    Itaque exercitationem quas quam sed libero culpa expedita. Tempora id eius voluptatum, aspernatur
-                    beatae, dolor quaerat unde sint accusantium itaque vero? Reiciendis ad vel deserunt quod animi eum
-                    amet quam!
-                    Aspernatur possimus quia rem voluptatibus adipisci quis, porro error? Consectetur et minus
-                    recusandae pariatur fuga dolorem debitis atque dicta odio, assumenda amet sint, tempora neque
-                    delectus reprehenderit, nesciunt voluptatibus id.
-                    Officia aperiam tenetur exercitationem accusamus, magni omnis sint eum! Eos quibusdam atque
-                    laudantium et vitae vero quam maiores quidem dicta blanditiis dolore delectus laboriosam, ratione
-                    eum accusantium unde harum quis.
-                    Rerum, ad. Temporibus deleniti, ipsum porro veniam natus dicta doloremque repellat esse iure. Harum
-                    nesciunt, omnis vitae veniam voluptates quibusdam consequuntur ipsum similique unde minus, adipisci
-                    corrupti sit. Odio, reiciendis.
-                    Quisquam, odit quasi ipsa explicabo voluptate odio harum in enim alias, totam modi, sequi iusto!
-                    Unde quas ipsam deserunt quos eveniet odit vitae pariatur recusandae aut, dignissimos doloremque
-                    nisi ducimus.
-                    Id unde iste, officiis obcaecati quod molestias quia harum vero molestiae repellendus quidem dolores
-                    recusandae placeat enim error eos sapiente alias eligendi velit asperiores assumenda explicabo
-                    culpa! Ut, libero porro.
-                    Magnam iure illum, veritatis laborum a nostrum aliquid inventore, nulla doloribus ducimus sequi in
-                    repellendus sit obcaecati, ex placeat odio porro temporibus sed distinctio odit autem! Rem ipsam
-                    esse voluptates?
-                    Eveniet quibusdam sint laboriosam, voluptatibus ullam quis eaque cumque neque dolorem iste sequi,
-                    illum fugiat ipsa architecto debitis. Sapiente, dolores! Iure error quod cupiditate laboriosam
-                    expedita dolorem eum optio vel!
-                    Ut iste unde, quas sapiente dolor, exercitationem deserunt, aspernatur optio quam porro ipsa
-                    suscipit provident possimus magni neque error illum. Quae incidunt, laborum sequi nesciunt cumque
-                    odio exercitationem dolorum delectus?
-                    Ea, voluptatem commodi. Provident minus corporis magni atque, eaque quaerat ipsum tenetur quo, in
-                    magnam, ducimus quisquam eum similique nihil est nostrum voluptatum. Iusto maiores, reprehenderit
-                    totam ipsa asperiores consectetur?
-                    At delectus reprehenderit tempore magnam. Illo, ad at dolorum doloribus molestias eligendi
-                    accusantium eveniet dolorem rem maxime atque facilis nobis, id nihil repudiandae, eum nostrum
-                    molestiae qui dolore voluptatibus soluta?
-                    Iste, modi. Veritatis minima vitae repudiandae repellat porro, reiciendis exercitationem, accusamus
-                    quia voluptates, nobis nam maxime ex eius dolor dolores ea expedita consequuntur? Facere fuga nisi
-                    deserunt minus officia soluta.
-                    Magni expedita aliquam accusantium vitae cupiditate minima ipsa ut vero. Consequatur doloribus modi
-                    reprehenderit delectus dolor, amet nulla itaque. Consequatur, fuga eum delectus natus odit id
-                    deleniti expedita facere velit.
-                    Officia delectus doloremque consequuntur voluptatem dolores sunt, quam quae eius ipsa reiciendis
-                    reprehenderit unde error dolorum at natus illo tempore quas sed nesciunt facere omnis. Aliquam
-                    suscipit provident aspernatur alias.
-                    Nostrum atque nesciunt aliquid possimus impedit vitae dolorum, numquam, quisquam nulla consequuntur,
-                    ut assumenda. Odio quidem necessitatibus quisquam dicta, amet sequi, eos nisi, placeat beatae culpa
-                    dolorum libero quis a.
-                    Aspernatur minima, maiores necessitatibus totam consequuntur culpa tempora cum quia dolores nesciunt
-                    facere non velit alias. Quia quae vero nihil vitae molestiae quisquam quos sunt voluptates! Nam et
-                    reprehenderit debitis!
-                    Ipsum ex quos reprehenderit blanditiis autem at molestias veritatis, odio necessitatibus ipsam
-                    temporibus dolorum reiciendis repellendus doloremque! Odio rerum id quo accusantium commodi maxime
-                    sequi quod cum, molestiae cumque tempore.
-                    Doloremque repellat esse, neque dignissimos numquam maxime, temporibus reprehenderit ducimus
-                    similique vero amet veniam asperiores nemo totam eum unde repudiandae eaque quibusdam, debitis
-                    accusantium ullam dolorum odit aliquam autem. Placeat.
-                    Ipsum dolorem accusantium, ullam rem necessitatibus ut reprehenderit aspernatur vitae non asperiores
-                    culpa deleniti mollitia veniam molestias veritatis. Veritatis inventore tenetur quo iusto iste
-                    libero architecto et eligendi ipsum enim!
-                    Praesentium, eligendi nam! Impedit adipisci quam quaerat veniam, ex autem laudantium minima
-                    consequuntur pariatur rerum et quo, repellendus, mollitia explicabo nisi eius ut vitae quidem eos
-                    facere necessitatibus quae! Dolores!
-                    Minima repellat corrupti labore ducimus culpa rem mollitia repudiandae consequatur maiores, dolorem
-                    at totam quaerat eum commodi adipisci libero consequuntur officia non vitae iure, velit voluptas.
-                    Sapiente numquam voluptates officia.
+                    <div id="chat" class="d-flex flex-column">
+                        <div class="message send">
+                            Hai portato a spasso il cane?
+                        </div>
+                        <div class="message send">
+                            Ricordati di stendere i panni!
+                        </div>
+                        <div class="message recived">
+                            Tutto fatto!
+                        </div>
+                    </div>
                 </div>
 
                 <footer>
-                    <div class="input-group my-3">
-                        <span class="input-group-text">
-                            <i class="fa-regular fa-face-smile"></i>
+                    <div class="input-group d-flex align-items-center gap-3">
+                        <span class="p-3">
+                            <i class="far fa-face-smile fa-xl"></i>
                         </span>
                         <input type="text" class="form-control" placeholder="Scrivi un messaggio">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-microphone"></i>
+                        <span class="p-3">
+                            <i class="fas fa-microphone fa-xl"></i>
                         </span>
                     </div>
                 </footer>

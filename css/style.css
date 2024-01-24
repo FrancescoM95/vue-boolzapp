@@ -1,12 +1,21 @@
+/** GENERICS */
+
 body {
-    background-image: linear-gradient(180deg, rgba(0, 150, 136, 1) 20%, rgba(220, 219, 209, 1) 20%);
+    background-image: linear-gradient(180deg, rgba(0, 150, 136, 1) 15%, rgba(220, 219, 209, 1) 15%);
     height: 100vh;
     padding: 30px;
 }
 
 img {
-    width: 70px;
+    width: 50px;
+    height: 50px;
     display: block;
+    border-radius: 50%;
+}
+
+a {
+    color: #B1B1B1;
+    text-decoration: none;
 }
 
 h4 {
@@ -17,13 +26,31 @@ h4 {
 ul {
     list-style-type: none;
     margin: 0;
+    padding: 0;
 }
+
+header {
+    height: 70px;
+    width: 100%;
+    background-color: #EAEAEA;
+    padding: 10px;
+}
+
+footer {
+    height: 70px;
+    background-color: #F3EEEA;
+    display: flex;
+    padding: 10px;
+}
+
+/** LAYOUT */
 
 #root {
     height: 100%;
     width: 80%;
-
 }
+
+/*# LEFT SIDEBAR */
 
 #navbar {
     height: 100%;
@@ -31,40 +58,69 @@ ul {
     background-color: #FFFFFF;
 }
 
+
 #banner {
     background-color: #8EDAFC;
     height: 70px;
+    padding: 0 20px;
     display: flex;
+    font-size: 0.9rem;
+    justify-content: start;
+    align-items: center;
+}
+
+
+#banner-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    color: #8EDAFC;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search {
+    height: 50px;
+    padding: 10px;
 }
 
 #contacts-element {
     overflow: auto;
-    height: calc(100% - 140px);
+    height: calc(100% - 200px);
+    margin-top: 10px;
 }
+
+/*# ACTIVE CHAT */
 
 #active-chat {
     flex-basis: 70%;
     height: 100%;
-
 }
 
 #chat-main {
     height: calc(100% - 140px);
     margin: 0;
+    padding: 30px 80px;
     background-color: #E5DDD5;
     background-image: url(/img/mine.jpg);
     overflow: auto;
-
 }
 
-header {
-    height: 70px;
-    width: 100%;
-    background-color: #EAEAEA;
+.message {
+    width: 300px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 10px 0;
 }
 
-footer {
-    height: 70px;
-    background-color: #F3EEEA;
-    display: flex;
+.message.send {
+    background-color: #E2FFD3;
+    align-self: flex-end;
+}
+
+.message.recived {
+    background-color: #FFFFFF;
 }
