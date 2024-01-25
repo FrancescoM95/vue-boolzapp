@@ -31,6 +31,16 @@ const app = createApp({
                 };
                 this.currentContact.messages.push(newMessage);
                 this.currentInput = '';
+
+                setTimeout(() => {
+                    const responseMessage = {
+                        id: this.currentContact.messages.length + 1,
+                        date: new Date().toLocaleString(),
+                        text: 'OK',
+                        status: 'received',
+                    };
+                    this.currentContact.messages.push(responseMessage);
+                }, 1000);
             }
         }
     }
