@@ -11,10 +11,15 @@ const app = createApp({
         contacts,
         activeId: Math.min(...contacts.map(contact => contact.id)),
         currentInput: '',
+        searchText: '',
     }),
     computed: {
         currentContact() {
             return this.contacts.find(contact => contact.id === this.activeId);
+        },
+        filteredContacts() {
+            const lowerSearchText = this.searchText.toLowerCase();
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(lowerSearchText));
         }
     },
     methods: {

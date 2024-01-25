@@ -75,7 +75,8 @@
                     <span class="input-group-text">
                         <i class="fas fa-search"></i>
                     </span>
-                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" v-model="searchText" class="form-control"
+                        placeholder="Cerca o inizia una nuova chat">
                 </div>
 
                 <div id="contacts-element">
@@ -83,7 +84,7 @@
                     <!-- LISTA CONTATTI -->
 
                     <ul id="contacts-list" class="list-group list-group-flush">
-                        <li v-for="contact in contacts" :key="contact.id"
+                        <li v-for="contact in filteredContacts" :key="contact.id"
                             class="list-group-item d-flex gap-2 align-items-center" role="button"
                             @click="setActiveId(contact.id)">
                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
