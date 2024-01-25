@@ -27,8 +27,11 @@ const app = createApp({
             this.activeId = id;
         },
         getLastMessage(contact) {
-            const lastMessage = contact.messages[contact.messages.length - 1];
-            return lastMessage.text;
+            if (contact.messages.length) {
+                const lastMessage = contact.messages[contact.messages.length - 1];
+                return lastMessage.text;
+            } return ''
+
         },
         getLastMessageDate(contact) {
             const lastMessage = contact.messages[contact.messages.length - 1];
@@ -57,7 +60,19 @@ const app = createApp({
             }
         },
         deleteMessage(messageId) {
-            this.currentContact.messages = this.currentContact.messages.filter(message => message.id !== messageId);
+            if (this.currentContact.messages.length > 1) {
+                this.currentContact.messages = this.currentContact.messages.filter(message => message.id !== messageId);
+            } else {
+                this.currentContact.messages = [
+                    {
+                        id: '',
+                        date: '',
+                        text: '',
+                        status: 'd-none',
+                    }
+                ]
+            }
+
         }
     }
 });
