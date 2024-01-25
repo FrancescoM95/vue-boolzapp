@@ -13,16 +13,6 @@ img {
     border-radius: 50%;
 }
 
-a,
-.fas {
-    color: #B1B1B1;
-}
-
-[class^="fa"] {
-    cursor: pointer;
-}
-
-
 h4 {
     margin: 0;
     font-size: 1.2rem;
@@ -34,18 +24,20 @@ ul {
     padding: 0;
 }
 
-header {
-    height: 70px;
-    width: 100%;
-    background-color: #EAEAEA;
-    padding: 10px;
+small {
+    align-self: self-end;
+    color: #B1B1B1;
+    font-size: 0.7rem;
+    margin-right: 5px;
 }
 
-footer {
-    height: 70px;
-    background-color: #F3EEEA;
-    display: flex;
-    padding: 10px;
+a,
+.fas {
+    color: #B1B1B1;
+}
+
+[class^="fa"] {
+    cursor: pointer;
 }
 
 /** LAYOUT */
@@ -63,6 +55,12 @@ footer {
     background-color: #FFFFFF;
 }
 
+header {
+    height: 70px;
+    width: 100%;
+    background-color: #EAEAEA;
+    padding: 10px;
+}
 
 #banner {
     background-color: #8EDAFC;
@@ -73,7 +71,6 @@ footer {
     justify-content: start;
     align-items: center;
 }
-
 
 #banner-img {
     width: 50px;
@@ -96,12 +93,12 @@ footer {
     overflow: auto;
     height: calc(100% - 200px);
     margin-top: 10px;
+    line-height: 0.8rem;
 }
 
 #contacts-list>li:hover {
     background-color: #EAEAEA;
 }
-
 
 /*# ACTIVE CHAT */
 
@@ -123,14 +120,13 @@ footer {
     width: 300px;
     padding-left: 15px;
     padding-top: 10px;
-    border-radius: 10px;
     margin: 10px 0;
+    border-radius: 10px;
+
     display: flex;
     flex-direction: column;
     box-shadow: 5px 5px 10px lightgray;
 }
-
-
 
 .message.sent {
     background-color: #E2FFD3;
@@ -141,14 +137,19 @@ footer {
     background-color: #FFFFFF;
 }
 
-small {
+.dropdown {
+    visibility: hidden;
     align-self: self-end;
-    color: #B1B1B1;
-    font-size: 0.7rem;
     margin-right: 5px;
 }
 
-.dropdown {
-    align-self: self-end;
-    margin-right: 5px;
+.message:hover .dropdown {
+    visibility: visible;
+}
+
+footer {
+    height: 70px;
+    background-color: #F3EEEA;
+    display: flex;
+    padding: 10px;
 }

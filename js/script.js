@@ -18,16 +18,21 @@ const app = createApp({
             return this.contacts.find(contact => contact.id === this.activeId);
         },
         filteredContacts() {
-            const lowerSearchText = this.searchText.toLowerCase();
-            return this.contacts.filter(contact => contact.name.toLowerCase().includes(lowerSearchText));
+            const textToSearch = this.searchText.toLowerCase();
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(textToSearch));
         }
     },
     methods: {
         setActiveId(id) {
             this.activeId = id;
         },
-        deleteMessage(messageId) {
-            this.currentContact.messages = this.currentContact.messages.filter(message => message.id !== messageId);
+        getLastMessage(contact) {
+            const lastMessage = contact.messages[contact.messages.length - 1];
+            return lastMessage.text;
+        },
+        getLastMessageDate(contact) {
+            const lastMessage = contact.messages[contact.messages.length - 1];
+            return lastMessage.date;
         },
         sendMessage() {
             if (this.currentInput.trim() !== '') {
@@ -51,13 +56,8 @@ const app = createApp({
                 }, 1000);
             }
         },
-        getLastMessage(contact) {
-            const lastMessage = contact.messages[contact.messages.length - 1];
-            return lastMessage.text;
-        },
-        getLastMessageDate(contact) {
-            const lastMessage = contact.messages[contact.messages.length - 1];
-            return lastMessage.date;
+        deleteMessage(messageId) {
+            this.currentContact.messages = this.currentContact.messages.filter(message => message.id !== messageId);
         }
     }
 });

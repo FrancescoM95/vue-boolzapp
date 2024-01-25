@@ -37,18 +37,20 @@
         <main class="h-100 d-flex">
 
             <!--* LEFT SIDEBAR -->
-
             <section id="navbar">
 
-                <!-- HEADER -->
-
+                <!--# HEADER -->
                 <header class="d-flex justify-content-between align-items-center px-3">
 
-                    <!-- User -->
+                    <!-- USER -->
+
                     <div class="d-flex align-items-center gap-2">
                         <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
                         <h4>{{ user.name }}</h4>
                     </div>
+
+                    <!-- ICONS -->
+
                     <div class="d-flex gap-3 color-grey">
                         <i class="fas fa-circle-notch fa-lg"></i>
                         <i class="fas fa-message fa-lg"></i>
@@ -56,8 +58,7 @@
                     </div>
                 </header>
 
-                <!-- BANNER -->
-
+                <!--# BANNER -->
                 <div id="banner">
                     <div id="banner-img">
                         <i class="fa-solid fa-bell-slash fa-lg"></i>
@@ -69,52 +70,66 @@
                 </div>
 
 
-                <!-- SEARCHBAR -->
-
+                <!--# SEARCHBAR -->
                 <div class="input-group" id="search">
+                    <!-- ICON -->
                     <span class="input-group-text">
                         <i class="fas fa-search"></i>
                     </span>
+
+                    <!--! INPUT -->
                     <input type="text" v-model="searchText" class="form-control"
                         placeholder="Cerca o inizia una nuova chat">
                 </div>
 
+
+                <!--# LISTA CONTATTI -->
                 <div id="contacts-element">
-
-                    <!-- LISTA CONTATTI -->
-
                     <ul id="contacts-list" class="list-group list-group-flush">
+
                         <li v-for="contact in filteredContacts" :key="contact.id"
                             class="list-group-item d-flex justify-content-between align-items-center gap-1"
                             role="button" @click="setActiveId(contact.id)">
 
+                            <!-- IMG -->
                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+
                             <div class="w-50">
-                                <p class="m-0">{{ contact.name }}</p>
+                                <!-- NOME -->
+                                <p class="mb-2">{{ contact.name }}</p>
+
+                                <!-- ULTIMO MESSAGGIO -->
                                 <small>{{ getLastMessage(contact) }}</small>
                             </div>
 
+                            <!-- DATA ULTIMO MESS -->
                             <small>{{ getLastMessageDate(contact) }}</small>
                         </li>
                     </ul>
-
                 </div>
             </section>
 
             <!--* ACTIVE CHAT -->
-
             <section id="active-chat">
 
-                <!-- HEADER -->
+                <!--# HEADER -->
                 <header class="d-flex align-items-center justify-content-between px-3">
                     <div class="d-flex align-items-center gap-2">
+
+                        <!-- IMG -->
                         <img :src="`img/avatar${currentContact.avatar}.jpg`" :alt="currentContact.name">
+
                         <div>
+                            <!-- NOME -->
                             <h4>{{ currentContact.name }}</h4>
-                            <p class="m-0 fs-6 fw-light">Ultimo accesso oggi alle {{ new Date().toLocaleTimeString()}}
+                            <!-- ULTIMO ACCESSO -->
+                            <p class="m-0 fs-6 fw-light">
+                                Ultimo accesso oggi alle {{ new Date().toLocaleTimeString()}}
                             </p>
                         </div>
                     </div>
+
+                    <!-- ICONS -->
                     <div class="d-flex gap-3">
                         <i class="fas fa-search fa-lg"></i>
                         <i class="fas fa-paperclip fa-lg"></i>
@@ -122,38 +137,52 @@
                     </div>
                 </header>
 
-                <!-- CHAT -->
-
+                <!--# CHAT -->
                 <div id="chat-main">
                     <div id="chat" class="d-flex flex-column">
+
+                        <!--* MESSAGGIO -->
                         <div v-for="message in currentContact.messages" :key="message.id" class="message"
                             :class="{ 'sent': message.status === 'sent', 'recived': message.status === 'received' }">
-                            <p class="mb-1">{{ message.text }}</p>
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+
+                            <div class="d-flex justify-content-between">
+                                <!-- TESTO -->
+                                <p class="mb-1">{{ message.text }}</p>
+
+                                <!-- DROPDOWN -->
+                                <div class="dropdown me-2">
+                                    <button class="btn dropdown-toggle p-1 border-0" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#" @click="deleteMessage(message.id)">
+                                                Elimina messaggio
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+
+                            <!-- DATA -->
                             <small>{{ message.date }}</small>
                         </div>
-
                     </div>
                 </div>
 
-                <!-- FOOTER -->
-
+                <!--# FOOTER -->
                 <footer>
                     <div class="input-group d-flex align-items-center gap-3">
+                        <!-- ICON -->
                         <span class="p-3">
                             <i class="far fa-face-smile fa-xl"></i>
                         </span>
+
+                        <!--! INPUT -->
                         <input type="text" v-model="currentInput" @keyup.enter="sendMessage" class="form-control"
                             placeholder="Scrivi un messaggio">
+
+                        <!-- ICON -->
                         <span class="p-3">
                             <i class="fa-solid fa-microphone fa-xl"></i>
                         </span>
@@ -163,6 +192,10 @@
 
         </main>
     </div>
+    <!--§ Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
