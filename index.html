@@ -85,10 +85,16 @@
 
                     <ul id="contacts-list" class="list-group list-group-flush">
                         <li v-for="contact in filteredContacts" :key="contact.id"
-                            class="list-group-item d-flex gap-2 align-items-center" role="button"
-                            @click="setActiveId(contact.id)">
+                            class="list-group-item d-flex justify-content-between align-items-center gap-1"
+                            role="button" @click="setActiveId(contact.id)">
+
                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
-                            {{ contact.name }}
+                            <div class="w-50">
+                                <p class="m-0">{{ contact.name }}</p>
+                                <small>{{ getLastMessage(contact) }}</small>
+                            </div>
+
+                            <small>{{ getLastMessageDate(contact) }}</small>
                         </li>
                     </ul>
 
@@ -105,7 +111,8 @@
                         <img :src="`img/avatar${currentContact.avatar}.jpg`" :alt="currentContact.name">
                         <div>
                             <h4>{{ currentContact.name }}</h4>
-                            <p class="m-0 fs-6 fw-light">Ultimo accesso oggi alle</p>
+                            <p class="m-0 fs-6 fw-light">Ultimo accesso oggi alle {{ new Date().toLocaleTimeString()}}
+                            </p>
                         </div>
                     </div>
                     <div class="d-flex gap-3">
@@ -122,6 +129,16 @@
                         <div v-for="message in currentContact.messages" :key="message.id" class="message"
                             :class="{ 'sent': message.status === 'sent', 'recived': message.status === 'received' }">
                             <p class="mb-1">{{ message.text }}</p>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
                             <small>{{ message.date }}</small>
                         </div>
 

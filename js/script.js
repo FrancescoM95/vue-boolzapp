@@ -26,6 +26,9 @@ const app = createApp({
         setActiveId(id) {
             this.activeId = id;
         },
+        deleteMessage(messageId) {
+            this.currentContact.messages = this.currentContact.messages.filter(message => message.id !== messageId);
+        },
         sendMessage() {
             if (this.currentInput.trim() !== '') {
                 const newMessage = {
@@ -47,6 +50,14 @@ const app = createApp({
                     this.currentContact.messages.push(responseMessage);
                 }, 1000);
             }
+        },
+        getLastMessage(contact) {
+            const lastMessage = contact.messages[contact.messages.length - 1];
+            return lastMessage.text;
+        },
+        getLastMessageDate(contact) {
+            const lastMessage = contact.messages[contact.messages.length - 1];
+            return lastMessage.date;
         }
     }
 });
