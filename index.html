@@ -42,33 +42,35 @@
 
                 <!-- HEADER -->
 
-                <header class="d-flex justify-content-between align-items-center">
+                <header class="d-flex justify-content-between align-items-center px-3">
 
                     <!-- User -->
                     <div class="d-flex align-items-center gap-2">
-                        <img :src="'img/avatar' + data.user.avatar + '.jpg'" :alt="data.user.name">
-                        <h4>{{ data.user.name }}</h4>
+                        <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
+                        <h4>{{ user.name }}</h4>
                     </div>
-                    <ul class="d-flex gap-3">
-                        <li><a href="#"><i class="fas fa-circle-notch fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fas fa-message fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fas fa-ellipsis-vertical fa-lg"></i></a></li>
-                    </ul>
+                    <div class="d-flex gap-3 color-grey">
+                        <i class="fas fa-circle-notch fa-lg"></i>
+                        <i class="fas fa-message fa-lg"></i>
+                        <i class="fas fa-ellipsis-vertical fa-lg"></i>
+                    </div>
                 </header>
 
+                <!-- BANNER -->
 
                 <div id="banner">
                     <div id="banner-img">
-                        <i class="fas fa-bell-slash fa-lg"></i>
+                        <i class="fa-solid fa-bell-slash fa-lg"></i>
                     </div>
                     <div class="ms-2">
                         <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
-                        <a href="#" class="text-decoration-underline">Attiva notifiche dekstop</a>
+                        <a href="#">Attiva notifiche dekstop</a>
                     </div>
                 </div>
 
 
-                <!-- Searchbar -->
+                <!-- SEARCHBAR -->
+
                 <div class="input-group" id="search">
                     <span class="input-group-text">
                         <i class="fas fa-search"></i>
@@ -78,10 +80,13 @@
 
                 <div id="contacts-element">
 
+                    <!-- LISTA CONTATTI -->
+
                     <ul id="contacts-list" class="list-group list-group-flush">
-                        <li v-for="contact in data.contacts" :key="contact.id"
-                            class="list-group-item d-flex gap-2 align-items-center" role="button">
-                            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                        <li v-for="contact in contacts" :key="contact.id"
+                            class="list-group-item d-flex gap-2 align-items-center" role="button"
+                            @click="setActiveId(contact.id)">
+                            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             {{ contact.name }}
                         </li>
                     </ul>
@@ -94,34 +99,35 @@
             <section id="active-chat">
 
                 <!-- HEADER -->
-                <header class="d-flex align-items-center justify-content-between">
+                <header class="d-flex align-items-center justify-content-between px-3">
                     <div class="d-flex align-items-center gap-2">
-                        <img :src="'img/avatar' + data.contacts[0].avatar + '.jpg'" :alt="data.contacts[0].name">
+                        <img :src="`img/avatar${currentContact.avatar}.jpg`" :alt="currentContact.name">
                         <div>
-                            <h4>{{ data.contacts[0].name }}</h4>
+                            <h4>{{ currentContact.name }}</h4>
                             <p class="m-0 fs-6 fw-light">Ultimo accesso oggi alle</p>
                         </div>
                     </div>
-                    <ul class="d-flex gap-3">
-                        <li><a href="#"><i class="fas fa-search fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fas fa-paperclip fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fas fa-ellipsis-vertical fa-lg"></i></a></li>
-                    </ul>
+                    <div class="d-flex gap-3">
+                        <i class="fas fa-search fa-lg"></i>
+                        <i class="fas fa-paperclip fa-lg"></i>
+                        <i class="fas fa-ellipsis-vertical fa-lg"></i>
+                    </div>
                 </header>
+
+                <!-- CHAT -->
 
                 <div id="chat-main">
                     <div id="chat" class="d-flex flex-column">
-                        <div class="message send">
-                            Hai portato a spasso il cane?
+                        <div v-for="message in currentContact.messages" :key="message.id" class="message"
+                            :class="{ 'sent': message.status === 'sent', 'recived': message.status === 'received' }">
+                            <p class="mb-1">{{ message.text }}</p>
+                            <small>{{ message.date }}</small>
                         </div>
-                        <div class="message send">
-                            Ricordati di stendere i panni!
-                        </div>
-                        <div class="message recived">
-                            Tutto fatto!
-                        </div>
+
                     </div>
                 </div>
+
+                <!-- FOOTER -->
 
                 <footer>
                     <div class="input-group d-flex align-items-center gap-3">
@@ -130,7 +136,7 @@
                         </span>
                         <input type="text" class="form-control" placeholder="Scrivi un messaggio">
                         <span class="p-3">
-                            <i class="fas fa-microphone fa-xl"></i>
+                            <i class="fa-solid fa-microphone fa-xl"></i>
                         </span>
                     </div>
                 </footer>
