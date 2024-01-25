@@ -10,6 +10,7 @@ const app = createApp({
         user,
         contacts,
         activeId: Math.min(...contacts.map(contact => contact.id)),
+        currentInput: '',
     }),
     computed: {
         currentContact() {
@@ -19,6 +20,18 @@ const app = createApp({
     methods: {
         setActiveId(id) {
             this.activeId = id;
+        },
+        sendMessage() {
+            if (this.currentInput.trim() !== '') {
+                const newMessage = {
+                    id: this.currentContact.messages.length + 1,
+                    date: new Date().toLocaleString(),
+                    text: this.currentInput,
+                    status: 'sent',
+                };
+                this.currentContact.messages.push(newMessage);
+                this.currentInput = '';
+            }
         }
     }
 });

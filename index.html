@@ -134,7 +134,8 @@
                         <span class="p-3">
                             <i class="far fa-face-smile fa-xl"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                        <input type="text" v-model="currentInput" @keyup.enter="sendMessage" class="form-control"
+                            placeholder="Scrivi un messaggio">
                         <span class="p-3">
                             <i class="fa-solid fa-microphone fa-xl"></i>
                         </span>
