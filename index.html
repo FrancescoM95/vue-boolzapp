@@ -127,8 +127,8 @@
                             <!-- NOME -->
                             <h4>{{ currentContact.name }}</h4>
                             <!-- ULTIMO ACCESSO -->
-                            <p class="m-0 fs-6 fw-light">
-                                Ultimo accesso oggi alle {{ new Date().toLocaleTimeString()}}
+                            <p class="m-0 fs-6 fw-light" v-model="lastLog">
+                                {{lastLog}}
                             </p>
                         </div>
                     </div>

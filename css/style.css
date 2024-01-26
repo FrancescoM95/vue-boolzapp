@@ -203,6 +203,10 @@ footer {
     #last-mess {
         display: none;
     }
+
+    #root {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -223,6 +227,8 @@ footer {
 @media screen and (max-width: 576px) {
 
     body {
-        padding: 30px 5px;
+        padding: 30px 0px;
     }
+
+
 }
