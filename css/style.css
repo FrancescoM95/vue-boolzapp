@@ -4,6 +4,7 @@ body {
     background-image: linear-gradient(180deg, rgba(0, 150, 136, 1) 15%, rgba(220, 219, 209, 1) 15%);
     height: 100vh;
     padding: 30px;
+    margin: 0 auto;
 }
 
 img {
@@ -51,7 +52,7 @@ a,
 
 #navbar {
     height: 100%;
-    flex-basis: 30%;
+    flex-basis: 35%;
     background-color: #FFFFFF;
 }
 
@@ -96,14 +97,23 @@ header {
     line-height: 0.8rem;
 }
 
-#contacts-list>li:hover {
+#contacts-element small {
+    flex-shrink: 0;
+}
+
+#contacts-list>li:hover,
+#contacts-list-offcanvas>li:hover {
     background-color: #EAEAEA;
+}
+
+#contacts-list>.list-group-item {
+    justify-content: space-between;
 }
 
 /*# ACTIVE CHAT */
 
 #active-chat {
-    flex-basis: 70%;
+    flex-basis: 65%;
     height: 100%;
 }
 
@@ -112,7 +122,7 @@ header {
     margin: 0;
     padding: 30px 80px;
     background-color: #E5DDD5;
-    background-image: url(/img/mine.jpg);
+    background-image: url(../img/mine.jpg);
     overflow: auto;
 }
 
@@ -152,4 +162,67 @@ footer {
     background-color: #F3EEEA;
     display: flex;
     padding: 10px;
+}
+
+#contactsOffcanvas {
+    width: 40%;
+}
+
+
+/*# RESPONSIVE */
+
+
+@media screen and (max-width: 1250px) {
+
+    #contacts-list>.list-group-item {
+        justify-content: flex-start;
+    }
+
+    #last-mess-date,
+    #banner {
+        display: none;
+    }
+
+    #contacts-element {
+        height: calc(100% - 130px);
+    }
+
+    #chat-main {
+        padding: 30px 40px;
+    }
+
+    #sidebar-icons>i {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    #chat-icons>.fa-search,
+    #chat-icons>.fa-paperclip,
+    #last-mess {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #navbar {
+        display: none;
+    }
+
+    #active-chat {
+        flex-basis: 100%;
+    }
+
+    #contactsOffcanvas {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    body {
+        padding: 30px 5px;
+    }
 }
