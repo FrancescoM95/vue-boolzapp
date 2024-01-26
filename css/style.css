@@ -112,7 +112,7 @@ header {
     margin: 0;
     padding: 30px 80px;
     background-color: #E5DDD5;
-    background-image: url('/img/mine.jpg');
+    background-image: url(/img/mine.jpg);
     overflow: auto;
 }
 
